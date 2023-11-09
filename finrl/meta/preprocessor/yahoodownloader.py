@@ -72,8 +72,10 @@ class YahooDownloader:
                 "volume",
                 "tic",
             ]
+            #Save original close price to oc
+            data_df["close0"] = data_df['close']
             # use adjusted close price instead of close price
-            #data_df["close"] = data_df["adjcp"]
+            data_df["close"] = data_df["adjcp"]
             # drop the adjusted close price column
             #data_df = data_df.drop(labels="adjcp", axis=1)
         except NotImplementedError:
